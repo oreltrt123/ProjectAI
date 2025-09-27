@@ -71,7 +71,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      {children}
+      {children} {/* ✅ Fixed here */}
       <ScrollRestoration />
       <Scripts />
     </>
@@ -79,5 +79,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <Layout>
+      <Outlet />
+    </Layout>
+  );
 }
